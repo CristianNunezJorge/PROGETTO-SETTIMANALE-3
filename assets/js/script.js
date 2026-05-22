@@ -23,6 +23,7 @@ REGOLE
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 
+
 /* RENDER()
    Una sola funzione che ridipinge la lista. A ogni chiamata:
    1) parte dall'array completo,

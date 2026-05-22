@@ -9,102 +9,112 @@
   </head>
 
   <body>
-    <!--HEADER PROVATO RESPONSIVE-->
     <header class="header-principale">
-      <!-- Titolo dell'app + sottotitolo + button tema chiaro/scuro -->
-
       <h1>
+        <img src="assets/img/game.png" alt="imaggine tracker inventory" />
         Tracker Inventario<!--NON SI FA MA LO HO AGGIUNTO ALL'ULTIMO-->
         <p>Aggiungi e crafta i tuoi item</p>
       </h1>
       <div class="tema-scuro-chiaro">
-        <button>🌗</button>
+        <button id="btn-tema">🌗</button>
       </div>
     </header>
 
     <main>
-      <!--QUESTA E LA PARTE DEL FORM PER RACCOGLIERE-->
-
-      <div>
+      <div class="box-affiancato">
         <h2>Raccogli Oggetto</h2>
-        <form>
+        <form id="form-raccolta">
           <div>
-            <label>Nome Oggetto *</label>
-            <input type="text" placeholder="Es. Gomitolo di Lana" />
+            <label for="input-nome">Nome Oggetto *</label>
+            <input type="text" id="input-nome" placeholder="Es. Gomitolo di Lana" required/>
           </div>
 
           <div>
-            <label>Quantità *</label>
-            <input type="number" />
+            <label for="input-quantita">Quantità *</label>
+            <input type="number" id="input-quantita" min="1" value="1" required/>
           </div>
 
-          <div class="form-group">
+          <div class="form-group filtro-box">
             <label for="select-categoria">Rarità *</label>
-            <select>
+            <select id="select-rarita" required>
               <option value="">Scegli rarità...</option>
               <option value="comune">Comune</option>
               <option value="epico">Epico</option>
               <option value="leggendario">Leggendario</option>
             </select>
           </div>
-
-          <button type="submit">Metti nello Zaino</button>
+          <div id="btn-invio">
+            <button type="submit" class="btn-invia">Metti nello Zaino</button>
+          </div>
         </form>
-      </div>
+     </div>
 
       <!--PARTE DEI FILTRI DELLO ZAINO-->
 
-      <div>
+      <div class="box-affiancato">
         <h2>Filtra lo zaino</h2>
-        <div>
-          <label>Cerca per nome:</label>
-          <input type="search" placeholder="Scrivi per cercare..." />
+       <form action="">>
+        <div class="form-group filtro-box">
+          <label for="filtro-cerca">Cerca per nome:</label>
+          <input type="search" id="filtro-cerca" placeholder="Scrivi per cercare..."/>
         </div>
 
-        <div>
-          <label>Rarità:</label>
-          <select>
+        <div class="form-group filtro-box">
+          <label for="filtro-rarita">Rarità:</label>
+          <select id="filtro-rarita">
             <option value="tutti">Tutte le rarità</option>
-            <option value="comune">Comune ⚪</option>
+            <option value="comune">Comune 🟢</option>
             <option value="epico">Epico 🟣</option>
             <option value="leggendario">Leggendario 🟡</option>
           </select>
         </div>
 
-        <div>
-          <label>Ordina per:</label>
-          <select>
+        <div class="form-group filtro-box">
+          <label for="filtro-ordine">Ordina per:</label>
+          <select id="filtro-ordine">
             <option value="nome-asc">Nome (A-Z)</option>
             <option value="nome-desc">Nome (Z-A)</option>
+            <option value="quantita-desc">Quantità (Maggiore)</option>
+            <option value="quantita-asc">Quantità (Minore)</option>
           </select>
         </div>
-
-        <div>
-          <span>Visualizzazione:</span>
-          <button>Lista</button>
-          <button>Griglia</button>
-          <button>Dettagli</button>
-        </div>
+       </form>
       </div>
 
       <!--questa invece e la parte di arrivo del form-->
-      <div>
-        <h3>Stato dello Zaino</h3>
-        <div>
-          <p>Slot occupati:0</p>
 
-          <p>Capacità totale dello zaino:</p>
-          <div>
-            <div></div>
+      <div class="stato-zaino-stretto">
+        <h3>Stato dello Zaino</h3>
+        <div class="stato-container">
+
+          <div class="stato-info-sinistra">
+            <p>Legenda</p>
+            <ul class="legenda-voce">
+              <li>Comune🟢</li>
+              <li>Epico🟣</li>
+              <li>Legg.🟡</li>
+            </ul>
+          </div>
+
+          <div class="stato-barra-destra">
+            <label>Ripartizione e Capacità dello Zaino:</label>
+            <div class="sfondo-barra-unica">
+              <div id="barra-comune" class="barra rarita-comune" style="width: 0%"></div>
+              <div id="barra-epico" class="barra rarita-epico" style="width: 0%"></div>
+              <div id="barra-leggendario" class="barra rarita-leggendario" style="width:0"><div>
+            </div>
           </div>
         </div>
-        <div>
-          <h2>Oggetti nello Zaino</h2>
-          <div></div>
+      </div> 
+
+        <div class="tabellone-inventario">
+          <h2>Oggetti Conservati (<span id="totale-oggetti">0</span>)</h2>
+          <div id="lista-inventario"></div>
         </div>
-        <div>Oggetto aggiunto con successo!</div>
-      </div>
+      
     </main>
+
+    <div></div>
 
     <footer>
       <!-- Autore, anno -->
