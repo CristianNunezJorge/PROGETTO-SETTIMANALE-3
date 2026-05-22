@@ -247,11 +247,10 @@ select:focus {
   font-size: 0;
 }
 
-.segmento-barra {
+.barra {
   display: inline-block;
   height: 100%;
   vertical-align: top;
-  text-align: center;
 }
 
 .rarita-comune {
@@ -306,8 +305,78 @@ select:focus {
   background: #f4eae1;
   font-weight: bold;
   font-size: 12px;
+  cursor: pointer;
 }
+
 .btn-azione:hover {
   background: #d4a373;
   color: #fff;
+}
+
+body.dark {
+  background: #1a1a1a;
+  color: #e0d5cc;
+}
+ 
+body.dark .box-affiancato,
+body.dark .stato-zaino-stretto,
+body.dark .tabellone-inventario {
+  background: #252525;
+  border-color: #7a5a40;
+}
+ 
+body.dark main h2,
+body.dark main h3 {
+  color: #d4a373;
+  border-color: #3a3030;
+}
+ 
+body.dark form label,
+body.dark .filtro-box label,
+body.dark .stato-barra-destra label {
+  color: #c4a080;
+}
+ 
+body.dark .legenda-voce li {
+  color: #c4a080;
+}
+ 
+body.dark input[type="text"],
+body.dark input[type="number"],
+body.dark input[type="search"],
+body.dark select {
+  background: #1a1a1a;
+  color: #e0d5cc;
+  border-color: #5a4030;
+}
+ 
+body.dark input:focus,
+body.dark select:focus {
+  border-color: #ffa1b2;
+  background: #222222;
+}
+ 
+body.dark .item-inventario {
+  background: #2e2e2e;
+  border-color: #3a3a3a;
+}
+ 
+body.dark .btn-azione {
+  background: #333333;
+  color: #e0d5cc;
+  border-color: #7a5a40;
+}
+ 
+body.dark .btn-azione:hover {
+  background: #d4a373;
+  color: #1a1a1a;
+}
+ 
+body.dark .sfondo-barra-unica {
+  background-color: #333333;
+  border-color: #7a5a40;
+}
+ 
+body.dark .stato-info-sinistra p {
+  color: #e0d5cc;
 }

@@ -12,7 +12,7 @@
     <header class="header-principale">
       <h1>
         <img src="assets/img/game.png" alt="imaggine tracker inventory" />
-        Tracker Inventario<!--NON SI FA MA LO HO AGGIUNTO ALL'ULTIMO-->
+        Tracker Inventario
         <p>Aggiungi e crafta i tuoi item</p>
       </h1>
       <div class="tema-scuro-chiaro">
@@ -34,8 +34,8 @@
             <input type="number" id="input-quantita" min="1" value="1" required/>
           </div>
 
-          <div class="form-group filtro-box">
-            <label for="select-categoria">Rarità *</label>
+          <div>
+            <label for="select-rerita">Rarità *</label>
             <select id="select-rarita" required>
               <option value="">Scegli rarità...</option>
               <option value="comune">Comune</option>
@@ -43,7 +43,7 @@
               <option value="leggendario">Leggendario</option>
             </select>
           </div>
-          <div id="btn-invio">
+          <div>
             <button type="submit" class="btn-invia">Metti nello Zaino</button>
           </div>
         </form>
@@ -53,13 +53,13 @@
 
       <div class="box-affiancato">
         <h2>Filtra lo zaino</h2>
-       <form action="">>
-        <div class="form-group filtro-box">
+       <form>
+        <div class="filtro-box">
           <label for="filtro-cerca">Cerca per nome:</label>
           <input type="search" id="filtro-cerca" placeholder="Scrivi per cercare..."/>
         </div>
 
-        <div class="form-group filtro-box">
+        <div class="filtro-box">
           <label for="filtro-rarita">Rarità:</label>
           <select id="filtro-rarita">
             <option value="tutti">Tutte le rarità</option>
@@ -69,7 +69,7 @@
           </select>
         </div>
 
-        <div class="form-group filtro-box">
+        <div class="filtro-box">
           <label for="filtro-ordine">Ordina per:</label>
           <select id="filtro-ordine">
             <option value="nome-asc">Nome (A-Z)</option>
@@ -85,7 +85,7 @@
 
       <div class="stato-zaino-stretto">
         <h3>Stato dello Zaino</h3>
-        <div class="stato-container">
+        <div class="stato-container-stretto">
 
           <div class="stato-info-sinistra">
             <p>Legenda</p>
@@ -101,7 +101,7 @@
             <div class="sfondo-barra-unica">
               <div id="barra-comune" class="barra rarita-comune" style="width: 0%"></div>
               <div id="barra-epico" class="barra rarita-epico" style="width: 0%"></div>
-              <div id="barra-leggendario" class="barra rarita-leggendario" style="width:0"><div>
+              <div id="barra-leggendario" class="barra rarita-leggendario" style="width:0"></div>
             </div>
           </div>
         </div>
@@ -113,8 +113,6 @@
         </div>
       
     </main>
-
-    <div></div>
 
     <footer>
       <!-- Autore, anno -->
