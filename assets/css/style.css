@@ -1,3 +1,10 @@
+@media (max-width:768px) {
+  h1, .header-principale {
+    display:block;
+    width: 100%;
+    text-align: center;
+  }
+}
 /* CSS reset minimo */
 * {
   margin: 0;
@@ -11,6 +18,59 @@ body {
   color: #111;
   background: #fff;
 }
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-principale {
+  background-color: #223111;
+  padding: 15px ;
+  border-bottom: 2px solid #cccbcb;
+  border-radius: 4px;
+  font-size: 0;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 26px;
+  vertical-align: middle;
+  width: 70%;
+  color: #cccbcb;
+}
+
+h1 p {
+  font-size: 14px;
+}
+
+.tema-scuro-chiaro {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+  font-size: 26px;
+  text-align: right;
+}
+
+.tema-scuro-chiaro button {
+  font-size: 30px;
+  border: 1px solid #cccbcb;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+.tema-scuro-chiaro button:hover {
+  background-color: #cccbcb;
+}
+
+
+
+
+
+
+
+
+
 
 img {
   max-width: 100%;
