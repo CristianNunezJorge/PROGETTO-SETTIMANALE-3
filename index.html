@@ -1,43 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week Project — Settimana III</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week Project — Settimana III</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="img.png" href="assets/img/game.png" />
+  </head>
 
-  <header>
-    <!-- Titolo dell'app + sottotitolo + button tema chiaro/scuro -->
-  </header>
+  <body>
+    <!--HEADER PROVATO RESPONSIVE-->
+    <header class="header-principale">
+      <!-- Titolo dell'app + sottotitolo + button tema chiaro/scuro -->
 
-  <main>
+      <h1>
+        Tracker Inventario<!--NON SI FA MA LO HO AGGIUNTO ALL'ULTIMO-->
+        <p>Aggiungi e crafta i tuoi item</p>
+      </h1>
+      <div class="tema-scuro-chiaro">
+        <button>🌗</button>
+      </div>
+    </header>
 
-    <section class="form">
-      <!-- Form di inserimento di nuovi elementi -->
-    </section>
+    <main>
+      <!--QUESTA E LA PARTE DEL FORM PER RACCOGLIERE-->
 
-    <section class="controlli">
-      <!-- Ricerca live, filtro (select), ordinamento -->
-    </section>
+      <div>
+        <h2>Raccogli Oggetto</h2>
+        <form>
+          <div>
+            <label>Nome Oggetto *</label>
+            <input type="text" placeholder="Es. Gomitolo di Lana" />
+          </div>
 
-    <section class="statistiche">
-      <!-- Conteggi e/o barre orizzontali -->
-    </section>
+          <div>
+            <label>Quantità *</label>
+            <input type="number" />
+          </div>
 
-    <section class="lista">
-      <!-- Container che render() ricostruisce a ogni cambio di stato -->
-    </section>
+          <div class="form-group">
+            <label for="select-categoria">Rarità *</label>
+            <select>
+              <option value="">Scegli rarità...</option>
+              <option value="comune">Comune</option>
+              <option value="epico">Epico</option>
+              <option value="leggendario">Leggendario</option>
+            </select>
+          </div>
 
-    <div id="notifica"></div>
+          <button type="submit">Metti nello Zaino</button>
+        </form>
+      </div>
 
-  </main>
+      <!--PARTE DEI FILTRI DELLO ZAINO-->
 
-  <footer>
-    <!-- Autore, anno -->
-  </footer>
+      <div>
+        <h2>Filtra lo zaino</h2>
+        <div>
+          <label>Cerca per nome:</label>
+          <input type="search" placeholder="Scrivi per cercare..." />
+        </div>
 
-  <script src="script.js"></script>
-</body>
+        <div>
+          <label>Rarità:</label>
+          <select>
+            <option value="tutti">Tutte le rarità</option>
+            <option value="comune">Comune ⚪</option>
+            <option value="epico">Epico 🟣</option>
+            <option value="leggendario">Leggendario 🟡</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Ordina per:</label>
+          <select>
+            <option value="nome-asc">Nome (A-Z)</option>
+            <option value="nome-desc">Nome (Z-A)</option>
+          </select>
+        </div>
+
+        <div>
+          <span>Visualizzazione:</span>
+          <button>Lista</button>
+          <button>Griglia</button>
+          <button>Dettagli</button>
+        </div>
+      </div>
+
+      <!--questa invece e la parte di arrivo del form-->
+      <div>
+        <h3>Stato dello Zaino</h3>
+        <div>
+          <p>Slot occupati:0</p>
+
+          <p>Capacità totale dello zaino:</p>
+          <div>
+            <div></div>
+          </div>
+        </div>
+        <div>
+          <h2>Oggetti nello Zaino</h2>
+          <div></div>
+        </div>
+        <div>Oggetto aggiunto con successo!</div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- Autore, anno -->
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
