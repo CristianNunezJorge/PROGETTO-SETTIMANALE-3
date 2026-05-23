@@ -115,8 +115,35 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const oggettiPredefiniti = [
+  {
+    id: 1,
+    nome: "Blocco di Diamante",
+    quantita: 3,
+    rarita: "leggendario",
+  },
+  {
+    id: 2,
+    nome: "Mela d'Oro Incantata",
+    quantita: 1,
+    rarita: "leggendario",
+  },
+  {
+    id: 3,
+    nome: "Pozione di Guarigione II",
+    quantita: 5,
+    rarita: "epico",
+  },
+  {
+    id: 4,
+    nome: "Gomitolo di Lana Bianca",
+    quantita: 64,
+    rarita: "comune",
+  },
+];
 
 let zaino = [];
+
 let filtroCerca = "";
 let filtroRarita = "tutti";
 let filtroOrdine = "";
@@ -222,7 +249,7 @@ function render() {
   let oggettiFiltrati = filtraZaino();
   let oggettiPronti = ordinaOggetti(oggettiFiltrati);
 
-   document.getElementById("totale-oggetti").innerText =
+  document.getElementById("totale-oggetti").innerText =
     calcolaTotalePezzi(oggettiPronti);
 
   let listaContainer = document.getElementById("lista-inventario");
@@ -236,6 +263,8 @@ function render() {
     let itemDiv = document.createElement("div");
     itemDiv.className = "item-inventario";
     itemDiv.setAttribute("data-id", item.id);
+
+    itemDiv.classList.add("rarita-" + item.rarita);
 
     let infoDiv = document.createElement("div");
     infoDiv.className = "item-info";
@@ -284,7 +313,8 @@ document
     event.preventDefault();
     let nomeInput = document.getElementById("input-nome").value.trim();
     let quantitaInput = parseInt(
-      document.getElementById("input-quantita").value);
+      document.getElementById("input-quantita").value,
+    );
     let raritaInput = document.getElementById("select-rarita").value;
 
     if (
@@ -424,9 +454,28 @@ document.getElementById("btn-tema").addEventListener("click", function () {
 let datiSalvati = localStorage.getItem("zaino_dati");
 if (datiSalvati) {
   zaino = JSON.parse(datiSalvati);
+} else {
+  zaino = [...oggettiPredefiniti];
 }
+
 let temaSalvato = localStorage.getItem("tema");
 if (temaSalvato === "dark") {
   document.body.classList.add("dark");
 }
 render();
+
+document
+  .getElementById("btn-reset-zaino")
+  .addEventListener("click", function () {
+    if (
+      confirm(
+        "Sei sicuro di voler resettare lo zaino? Perderai le modifiche e torneranno gli oggetti predefiniti.",
+      )
+    ) {
+      localStorage.removeItem("zaino_dati");
+      mostraNotifica("Zaino ripristinato ai dati di fabbrica!");
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
+    }
+  });

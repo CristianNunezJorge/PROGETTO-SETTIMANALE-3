@@ -26,12 +26,23 @@
         <form id="form-raccolta">
           <div>
             <label for="input-nome">Nome Oggetto *</label>
-            <input type="text" id="input-nome" placeholder="Es. Gomitolo di Lana" required/>
+            <input
+              type="text"
+              id="input-nome"
+              placeholder="Es. Gomitolo di Lana"
+              required
+            />
           </div>
 
           <div>
             <label for="input-quantita">Quantità *</label>
-            <input type="number" id="input-quantita" min="1" value="1" required/>
+            <input
+              type="number"
+              id="input-quantita"
+              min="1"
+              value="1"
+              required
+            />
           </div>
 
           <div>
@@ -47,38 +58,42 @@
             <button type="submit" class="btn-invia">Metti nello Zaino</button>
           </div>
         </form>
-     </div>
+      </div>
 
       <!--PARTE DEI FILTRI DELLO ZAINO-->
 
       <div class="box-affiancato">
         <h2>Filtra lo zaino</h2>
-       <form>
-        <div class="filtro-box">
-          <label for="filtro-cerca">Cerca per nome:</label>
-          <input type="search" id="filtro-cerca" placeholder="Scrivi per cercare..."/>
-        </div>
+        <form>
+          <div class="filtro-box">
+            <label for="filtro-cerca">Cerca per nome:</label>
+            <input
+              type="search"
+              id="filtro-cerca"
+              placeholder="Scrivi per cercare..."
+            />
+          </div>
 
-        <div class="filtro-box">
-          <label for="filtro-rarita">Rarità:</label>
-          <select id="filtro-rarita">
-            <option value="tutti">Tutte le rarità</option>
-            <option value="comune">Comune 🟢</option>
-            <option value="epico">Epico 🟣</option>
-            <option value="leggendario">Leggendario 🟡</option>
-          </select>
-        </div>
+          <div class="filtro-box">
+            <label for="filtro-rarita">Rarità:</label>
+            <select id="filtro-rarita">
+              <option value="tutti">Tutte le rarità</option>
+              <option value="comune">Comune 🟢</option>
+              <option value="epico">Epico 🟣</option>
+              <option value="leggendario">Leggendario 🟡</option>
+            </select>
+          </div>
 
-        <div class="filtro-box">
-          <label for="filtro-ordine">Ordina per:</label>
-          <select id="filtro-ordine">
-            <option value="nome-asc">Nome (A-Z)</option>
-            <option value="nome-desc">Nome (Z-A)</option>
-            <option value="quantita-desc">Quantità (Maggiore)</option>
-            <option value="quantita-asc">Quantità (Minore)</option>
-          </select>
-        </div>
-       </form>
+          <div class="filtro-box">
+            <label for="filtro-ordine">Ordina per:</label>
+            <select id="filtro-ordine">
+              <option value="nome-asc">Nome (A-Z)</option>
+              <option value="nome-desc">Nome (Z-A)</option>
+              <option value="quantita-desc">Quantità (Maggiore)</option>
+              <option value="quantita-asc">Quantità (Minore)</option>
+            </select>
+          </div>
+        </form>
       </div>
 
       <!--questa invece e la parte di arrivo del form-->
@@ -86,7 +101,6 @@
       <div class="stato-zaino-stretto">
         <h3>Stato dello Zaino</h3>
         <div class="stato-container-stretto">
-
           <div class="stato-info-sinistra">
             <p>Legenda</p>
             <ul class="legenda-voce">
@@ -99,23 +113,39 @@
           <div class="stato-barra-destra">
             <label>Ripartizione e Capacità dello Zaino:</label>
             <div class="sfondo-barra-unica">
-              <div id="barra-comune" class="barra rarita-comune" style="width: 0%"></div>
-              <div id="barra-epico" class="barra rarita-epico" style="width: 0%"></div>
-              <div id="barra-leggendario" class="barra rarita-leggendario" style="width:0"></div>
+              <div
+                id="barra-comune"
+                class="barra rarita-comune"
+                style="width: 0%"
+              ></div>
+              <div
+                id="barra-epico"
+                class="barra rarita-epico"
+                style="width: 0%"
+              ></div>
+              <div
+                id="barra-leggendario"
+                class="barra rarita-leggendario"
+                style="width: 0"
+              ></div>
             </div>
           </div>
         </div>
-      </div> 
+      </div>
 
-        <div class="tabellone-inventario">
-          <h2>Oggetti Conservati (<span id="totale-oggetti">0</span>)</h2>
-          <div id="lista-inventario"></div>
-        </div>
-      
+      <div class="tabellone-inventario">
+        <h2>Oggetti Conservati (<span id="totale-oggetti">0</span>)</h2>
+        <div id="lista-inventario"></div>
+      </div>
+      <div style="text-align: center; margin: 20px 0">
+        <button id="btn-reset-zaino" class="btn-azione">
+          Reset local storage e oggetti predefiniti
+        </button>
+      </div>
     </main>
 
     <footer>
-      <!-- Autore, anno -->
+      <h2>© 2026 — Sviluppato da Cristian</h2>
     </footer>
 
     <script src="assets/js/script.js"></script>
